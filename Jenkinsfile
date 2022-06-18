@@ -7,7 +7,7 @@ pipeline {
     }
     // npm ERR! Error: EACCES: permission denied, mkdir '/.npm'
     environment {
-        CI = 'true'
+        HOME = '.'
     }
     stages {
         stage('Build') {
@@ -20,6 +20,5 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
-       
     }
 }
